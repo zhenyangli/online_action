@@ -1,4 +1,4 @@
-A DEMO code that enables to run LSTM to predict frame scores.
+A demo code that enables to run LSTM to predict frame scores.
 
 Setup
 =====

@@ -1,4 +1,4 @@
-A DEMO code that enables to run RGB CNN to generate frame predictions.
+A demo code that enables to run RGB CNN to generate frame predictions.
 
 Setup
 =====
