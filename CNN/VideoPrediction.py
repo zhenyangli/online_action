@@ -1,5 +1,5 @@
 '''
-A sample function for classification using spatial network
+A sample function for classification using CNN network
 Customize as needed:
 e.g. num_categories, layer for feature extraction, batch_size
 '''
@@ -12,13 +12,13 @@ import cv2
 from scipy.misc import imread, imresize
 import scipy.io as sio
 
-caffelib = '/home/zhenyang/local/softs/caffe'
+caffelib = '/local/softs/caffe'
 if caffelib:
     caffepath = caffelib + '/python'
     sys.path.append(caffepath)
 import caffe
 
-def VideoSpatialPrediction(
+def VideoPrediction(
         vid_name,
         net,
         num_categories,
@@ -29,7 +29,6 @@ def VideoSpatialPrediction(
         ):
 
     if num_frames == 0:
-        #imglist = glob.glob(os.path.join(vid_name, '*image_*.jpg'))
         imglist = glob.glob(os.path.join(vid_name, 'frame_*.jpg'))
         duration = len(imglist)
     else:
@@ -52,7 +51,6 @@ def VideoSpatialPrediction(
         batch_range = range(i, min(i+N, num_samples))
         batch_rgbs = np.zeros(shape=(len(batch_range)*10,3,224,224), dtype=np.float32)
         for j,k in enumerate(batch_range):
-            #img_file = os.path.join(vid_name, 'image_{0:04d}.jpg'.format(k+1))
             img_file = os.path.join(vid_name, 'frame_{0:05d}.jpg'.format(k+1))
 
             #img = cv2.imread(img_file, cv2.IMREAD_UNCHANGED)

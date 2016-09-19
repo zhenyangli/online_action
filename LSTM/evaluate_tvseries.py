@@ -46,10 +46,10 @@ seq_length = 16
 #############################
 # NOTE: the real batch_size = minibatch_size (number of videos) * num_segments (per video)
 iterator_param = {'dataset': 'tvseries',
-                  'data_file': '/home/zhenyang/Workspace/data/tvseries/features_dissected/rgb_vgg16_fc6',
-                  'num_frames_file': '/home/zhenyang/Workspace/data/tvseries/train_framenum.txt',
-                  'labels_file': '/home/zhenyang/Workspace/data/tvseries/train_labels.txt',
-                  'vid_name_file': '/home/zhenyang/Workspace/data/tvseries/train_filenames.txt',
+                  'data_file': '/data/tvseries/features_dissected/rgb_vgg16_fc6',
+                  'num_frames_file': '/data/tvseries/train_framenum.txt',
+                  'labels_file': '/data/tvseries/train_labels.txt',
+                  'vid_name_file': '/data/tvseries/train_filenames.txt',
                   'dataset_name': 'features', 'rng': iterator_rng, 'frame_rng': iterator_frame_rng,
                   'seq_length': seq_length, 'num_segments': 1, 'seq_fps': 30,
                   'minibatch_size': 64, 'train_sampling': True,
@@ -61,10 +61,10 @@ train_iterator.begin(do_shuffle=True)
 train_iterator.print_stat()
 ##
 iterator_param = {'dataset': 'tvseries',
-                  'data_file': '/home/zhenyang/Workspace/data/tvseries/features_dissected/rgb_vgg16_fc6',
-                  'num_frames_file': '/home/zhenyang/Workspace/data/tvseries/test_framenum.txt',
-                  'labels_file': '/home/zhenyang/Workspace/data/tvseries/test_labels.txt',
-                  'vid_name_file': '/home/zhenyang/Workspace/data/tvseries/test_filenames.txt',
+                  'data_file': '/data/tvseries/features_dissected/rgb_vgg16_fc6',
+                  'num_frames_file': '/data/tvseries/test_framenum.txt',
+                  'labels_file': '/data/tvseries/test_labels.txt',
+                  'vid_name_file': '/data/tvseries/test_filenames.txt',
                   'dataset_name': 'features', 'rng': None, 'frame_rng': None,
                   'seq_length': seq_length, 'num_segments': 25, 'seq_fps': 30,
                   'minibatch_size': 20, 'train_sampling': False,
@@ -200,4 +200,3 @@ param = {'id': '1', 'learning_rate': 0.001, 'momentum': 0.9, 'decay_rate': 0.9, 
 optimizer = RMSProp(model, train_iterator, valid_iterator, test_iterator, param)
 
 optimizer.train()
-

@@ -1,4 +1,4 @@
-name: "tvseries_Action_SpatialNet"
+name: "tvseries_Action_RGBNet"
 input: "data"
 input_dim: 100
 input_dim: 3

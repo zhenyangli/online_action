@@ -1,3 +1,14 @@
+### SPARNN
+The repository uses some code from the project SPARNN (https://github.com/sxjscience/SPARNN) which is a Light-Weighted Spatial Temporal RNN Toolbox based on Theano (http://deeplearning.net/software/theano/install.html)
+
+
+### Requirements
+Latest Python2 (python2.7.*)
+numpy + scipy
+Theano
+HDF5
+
+
 ### Library
 4 main components:
 
