@@ -87,10 +87,10 @@ def get_acc(model, data_iterator, save_dir):
                 fp.write(line+'\n')
 
 
-save_path = "./results/"
-model_path = './models/tvseries-baseline-lstm-fc6-seq-16/tvseries-VideoModel-LSTM-RMS-validation-best.pkl'
+save_path = "./result/"
+model_path = './model/tvseries-VideoModel-LSTM-RMS-validation-best.pkl'
 log_path = save_path + "test_tvseries_lstm.log"
-result_save_dir = save_path + 'results-stride-1-lastpred'
+result_save_dir = save_path + 'result-stride-1-lastpred'
 
 if not os.path.exists(save_path):
     os.makedirs(save_path)
@@ -105,12 +105,12 @@ numpy.random.seed(1000)
 seq_length = 16
 
 
-#############################
+############################# data handler
 iterator_param = {'dataset': 'tvseries',
                   'data_file': '/data/tvseries/features/rgb_vgg16_fc6',
-                  'num_frames_file': '/data/tvseries/test_full_framenum.txt',
-                  'labels_file': '/data/tvseries/test_full_labels.txt',
-                  'vid_name_file': '/data/tvseries/test_full_filenames.txt',
+                  'num_frames_file': '/data/tvseries/test__framenum.txt',
+                  'labels_file': '/data/tvseries/test_labels.txt',
+                  'vid_name_file': '/data/tvseries/test_filenames.txt',
                   'dataset_name': 'features', 'rng': None,
                   'seq_length': seq_length, 'seq_stride': 1, 'seq_fps': 30,
                   'minibatch_size': 256,
