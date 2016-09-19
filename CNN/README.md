@@ -9,7 +9,7 @@ Setup
 ##### Download the datasets and pre-trained models
 * Extract all the frames of each video into folders indicated in the annotations files, i.e. **../tvseries/list_test.txt**.
 
-* [Caffe model](http://caffe.berkeleyvision.org/installation.html) trained on tvseries dataset train split, download into **model** folder.
+* [Caffe model](http://isis-data.science.uva.nl/zhenyang/online_action/models/tvseries_action_recognition_vgg_16_rgb_iter_3K.caffemodel) trained on tvseries dataset train split, download into **model** folder.
 
 
 Demo

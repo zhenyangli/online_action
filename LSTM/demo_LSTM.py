@@ -88,7 +88,7 @@ def evaluate_acc(model, data_iterator, save_dir):
 
 
 save_path = "./result/"
-model_path = './model/tvseries-VideoModel-LSTM-RMS-validation-best.pkl'
+model_path = './model/tvseries-VideoModel-LSTM-fc6-RMS-validation-best.pkl'
 log_path = save_path + "test_tvseries_lstm.log"
 result_save_dir = save_path + 'result-stride-1-lastpred'
 
