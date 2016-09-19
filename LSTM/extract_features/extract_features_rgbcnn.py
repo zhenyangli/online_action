@@ -16,6 +16,7 @@ if caffelib:
 
 import caffe
 
+
 def predict(in_data, net):
     """
     Get the features for a batch of data using network
@@ -70,9 +71,6 @@ def batch_predict(listfile, outputfile, net):
             # RGB -> BGR
             im = im[:,:,(2,1,0)]
             # first, resize (scipy.misc.imresize only works with uint8)
-            # We turn off Matlab's antialiasing to better match OpenCV's bilinear 
-            # interpolation that is used in Caffe's WindowDataLayer.
-            # im = imresize(im, (H, W), 'bilinear')
             im = cv2.resize(im, (W, H), interpolation=cv2.INTER_LINEAR)
             # then, mean subtraction
             im = im - np.array([104., 117., 123.])

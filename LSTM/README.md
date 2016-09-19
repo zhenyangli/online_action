@@ -26,6 +26,6 @@ python extract_features/extract_rgbcnn.py -d ../tvseries/list_test.txt
 
 * Evaluate LSTM model on a dataset split
 ```Shell
-python demo_LSTM.py
+THEANO_FLAGS='floatX=float32,device=gpu0,mode=FAST_RUN,nvcc.fastmath=True' python demo_LSTM.py
 ```
 (You may have to change the python script according to your own local path)
