@@ -34,11 +34,11 @@ def main():
 
     # spatial prediction
     model_def_file = './tvseries_action_rgb_vgg_16_deploy.prototxt'
-    model_file = './tvseries_action_recognition_vgg_16_rgb_iter_3K.caffemodel'
+    model_file = './model/tvseries_action_recognition_vgg_16_rgb_iter_3K.caffemodel'
     spatial_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # input videos (containing image_*.jpg and some settings)
-    dataset = './list_test.txt' # list_val.txt # list_train.txt
+    dataset = '../tvseries/list_test.txt' # list_val.txt # list_train.txt
     filenames = []
     numframes = []
     labels = []
@@ -52,7 +52,7 @@ def main():
     start_frame = 0
     num_categories = 30
     feature_layer = 'fc8-tvseries'
-    save_dir = '/data/tvseries/results'
+    save_dir = './result'
 
     for i, filename in enumerate(filenames):
         filename_ = os.path.splitext(os.path.basename(filename))[0]
