@@ -29,7 +29,7 @@ import h5py
 
 
 label_dims = [30]
-def get_acc(model, data_iterator, save_dir):
+def evaluate_acc(model, data_iterator, save_dir):
 
     probs = numpy.zeros((data_iterator.total(),data_iterator.seq_length)+tuple(label_dims)).astype(theano.config.floatX)
 
@@ -108,7 +108,7 @@ seq_length = 16
 ############################# data handler
 iterator_param = {'dataset': 'tvseries',
                   'data_file': '/data/tvseries/features/rgb_vgg16_fc6',
-                  'num_frames_file': '/data/tvseries/test__framenum.txt',
+                  'num_frames_file': '/data/tvseries/test_framenum.txt',
                   'labels_file': '/data/tvseries/test_labels.txt',
                   'vid_name_file': '/data/tvseries/test_filenames.txt',
                   'dataset_name': 'features', 'rng': None,
@@ -122,13 +122,13 @@ valid_iterator.begin(do_shuffle=False)
 valid_iterator.print_stat()
 
 
-############################# model
+############################# load model
 model = VideoModel.load(model_path)
 model.print_stat()
 
 
-############################# optimizer
-accuracy = quick_timed_log_eval(logger.info, "Validation Accuracy", get_acc,
+############################# evaluate per-frame predictions
+quick_timed_log_eval(logger.info, "Evaluate Accuracy", evaluate_acc,
                                 *(model, valid_iterator, result_save_dir))
-print "Validation Accuracy: ", str(accuracy)
+print "Evaluate Accuracy Done!"
 
