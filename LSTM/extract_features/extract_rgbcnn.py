@@ -88,7 +88,7 @@ def extractVideo(net, inputdir, outputdir, framefreq):
     addToList(net,outputdir,framefreq)
 
 
-# python extract_rgbcnn.py -s 1 -t 1600 --gpu_id 1 --model_def --model
+# python extract_rgbcnn.py --gpu_id 0 --model_def --model
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='FeatureExtractior')
     parser.add_argument('-d', '--dataset', dest='dataset', help='Specify dataset to process.', type=str, required=False)
