@@ -1,5 +1,5 @@
 '''
-A sample script to run classificition using RGB CNN nets.
+A sample script to run classificition using RGB CNN network.
 Modify this script and path as needed.
 '''
 
