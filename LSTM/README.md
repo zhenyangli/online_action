@@ -19,7 +19,9 @@ Demo
 
 * Extact per-frame CNN features using Caffe model
 ```Shell
-python extract_features/extract_rgbcnn.py -d ../tvseries/list_test.txt -model_def tvseries_action_rgb_vgg_16_deploy_features_fc6.prototxt --model model/tvseries_action_recognition_vgg_16_rgb_iter_3K.caffemodel
+python extract_features/extract_rgbcnn.py -d ../tvseries/list_test.txt 
+--model_def tvseries_action_rgb_vgg_16_deploy_features_fc6.prototxt
+--model model/tvseries_action_recognition_vgg_16_rgb_iter_3K.caffemodel
 ```
 
 * Evaluate LSTM model on a dataset split
