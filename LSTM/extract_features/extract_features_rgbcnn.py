@@ -8,7 +8,7 @@ import cv2
 import h5py
 import cPickle as pickle
 
-caffelib = '/home/egavves/caffe'
+caffelib = '/local/softs/caffe'
 
 if caffelib:
     caffepath = caffelib + '/python'

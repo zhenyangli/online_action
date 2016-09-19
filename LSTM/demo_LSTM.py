@@ -87,8 +87,8 @@ def get_acc(model, data_iterator, save_dir):
                 fp.write(line+'\n')
 
 
-save_path = "./tvseries-experiment/tvseries-baseline-lstm-fc6-seq-16/rms-lr-0.001-decayr-0-decays-0-drop-0.5-0.5-l2-1e5-init-gauss0.1/"
-model_path = save_path + 'tvseries-VideoModel-LSTM-RMS-validation-best.pkl'
+save_path = "./results/"
+model_path = './models/tvseries-baseline-lstm-fc6-seq-16/tvseries-VideoModel-LSTM-RMS-validation-best.pkl'
 log_path = save_path + "test_tvseries_lstm.log"
 result_save_dir = save_path + 'results-stride-1-lastpred'
 

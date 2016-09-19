@@ -8,7 +8,7 @@ import json
 import glob
 from PIL import Image
 
-caffelib = '/home/zhenyang/local/softs/caffe'
+caffelib = '/local/softs/caffe'
 
 if caffelib:
     caffepath = caffelib + '/python'
@@ -62,14 +62,12 @@ def getImageFeatures(net, inputfile, outputfile):
 def addToList(net, inputdir, framefreq):
     print '(2/3) addToList: ' + inputdir
 
-    #frames = glob.glob(join(inputdir, '*image_*.jpg'))
     frames = glob.glob(join(inputdir, '*frame_*.jpg'))
     duration = len(frames)
     counter = framefreq
 
     open(inputdir + '/tasks.txt', 'w').close()
     for i in range(duration):
-        #frame = join(inputdir, 'image_{0:04d}.jpg'.format(i+1))
         frame = join(inputdir, 'frame_{0:05d}.jpg'.format(i+1))
         if frame.endswith('.jpg') or frame.endswith('.png'):
             if counter >= framefreq:
@@ -80,19 +78,13 @@ def addToList(net, inputdir, framefreq):
             counter += 1
 
     inputfile = inputdir + '/tasks.txt'
-    #outputfile = join(os.path.dirname(os.path.dirname(inputdir)), 'features_dissected', 'rgb_vgg16_fc6', os.path.basename(inputdir))
     outputfile = join(os.path.dirname(os.path.dirname(inputdir)), 'features', 'rgb_vgg16_fc6', os.path.basename(inputdir))
     getImageFeatures(net,inputfile,outputfile)
 
 
 def extractVideo(net, inputdir, outputdir, framefreq):
-    #if not os.path.exists(outputdir):
-    if 0:
-        os.makedirs(outputdir)
-        print('(1/3) extractVideo: ' + inputdir + ' To: ' + outputdir)
-    else:
-        print('(1/3) extractVideo: ' + inputdir + ' Exist: ' + outputdir)
-
+    # video frames are pre-extracted
+    print('(1/3) extractVideo: ' + inputdir + ' Exist: ' + outputdir)
     addToList(net,outputdir,framefreq)
 
 
@@ -109,8 +101,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.dataset is None:
-        print 'Not specify dataset, using UCF101 dataset by default...'
-        args.dataset = '/home/zhenyang/Workspace/data/UCF101/list_UCF101.txt'
+        print 'Not specify dataset, using tvseries dataset by default...'
+        args.dataset = '/data/tvseries/list_tvseries.txt'
     if args.frequency is None:
         args.frequency = 1
 
