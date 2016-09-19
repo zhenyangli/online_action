@@ -41,13 +41,11 @@ def main():
     dataset = '../tvseries/list_test.txt' # list_val.txt # list_train.txt
     filenames = []
     numframes = []
-    labels = []
     with open(dataset) as fp:
         for line in fp:
             splits = line.strip().split(' ')
             filenames.append(splits[0])
             numframes.append(int(splits[1]))
-            labels.append(int(splits[2]))
 
     start_frame = 0
     num_categories = 30
