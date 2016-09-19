@@ -3,10 +3,11 @@ The repository uses some code from the project [SPARNN](https://github.com/sxjsc
 
 
 ### Requirements
-Latest Python2 (python2.7.*)
-numpy + scipy
-Theano
-HDF5
+
+Latest Python2 (python2.7.*) 
+numpy + scipy 
+Theano 
+HDF5 
 
 
 ### Library
