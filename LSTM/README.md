@@ -6,8 +6,7 @@ Setup
 ##### Install Theano and other python packages
 * Install Theano. The instructions for installing Theano are [here](http://deeplearning.net/software/theano/install.html).
 * Required python packages:
-    numpy + scipy
-    HDF5
+    numpy + scipy + HDF5
 
 ##### Download the datasets and pre-trained models
 * Extract all the frames of each video into folders indicated in the annotations files, i.e. **../tvseries/list_test.txt**.
